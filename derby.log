@@ -1,24 +1,11 @@
 ----------------------------------------------------------------
-Wed Apr 12 10:37:31 CST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0187-7353-4b75-00001c0e1170 
-on database directory C:\Users\Administrator\nacos\data\derby-data with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Fri Apr 14 15:59:42 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0187-7ec6-f549-00002d9afb68 
+on database directory memory:D:\MyWorkingSpace\nacos\efb34234-8b76-430b-89f8-e59727adbb9b with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
 Loaded from file:/D:/data/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_251-b08
-user.dir=D:\MyWorkingSpace\nacos-2.2.0
-os.name=Windows Server 2016
-os.arch=amd64
-os.version=10.0
-derby.system.home=null
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Wed Apr 12 10:37:38 CST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance cf35407a-0187-7353-4b75-00001c0e1170 
-on database directory memory:D:\MyWorkingSpace\nacos-2.2.0\0723da08-4de6-4498-97c4-fcf5e5e4f122 with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/D:/data/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_251-b08
-user.dir=D:\MyWorkingSpace\nacos-2.2.0
+user.dir=D:\MyWorkingSpace\nacos
 os.name=Windows Server 2016
 os.arch=amd64
 os.version=10.0

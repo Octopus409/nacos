@@ -26,11 +26,12 @@ const configurationMenu = {
     {
       key: 'historyRollback',
       url: '/historyRollback',
-    },
-    {
-      key: 'listeningToQuery',
-      url: '/listeningToQuery',
-    },
+    }
+    // ,
+    // {
+    //   key: 'listeningToQuery',
+    //   url: '/listeningToQuery',
+    // },
   ],
 };
 /**
@@ -60,32 +61,32 @@ export default function(model) {
 
   return [
     model === 'naming' ? undefined : configurationMenu,
-    {
-      key: 'serviceManagementVirtual',
-      children: [
-        {
-          key: 'serviceManagement',
-          url: '/serviceManagement',
-        },
-        {
-          key: 'subscriberList',
-          url: '/subscriberList',
-        },
-      ],
-    },
+    // {
+    //   key: 'serviceManagementVirtual',
+    //   children: [
+    //     {
+    //       key: 'serviceManagement',
+    //       url: '/serviceManagement',
+    //     },
+    //     {
+    //       key: 'subscriberList',
+    //       url: '/subscriberList',
+    //     },
+    //   ],
+    // },
     globalAdmin ? authorityControlMenu : undefined,
     {
       key: 'namespace',
       url: '/namespace',
     },
-    {
-      key: 'clusterManagementVirtual',
-      children: [
-        {
-          key: 'clusterManagement',
-          url: '/clusterManagement',
-        },
-      ],
-    },
+    // {
+    //   key: 'clusterManagementVirtual',
+    //   children: [
+    //     {
+    //       key: 'clusterManagement',
+    //       url: '/clusterManagement',
+    //     },
+    //   ],
+    // },
   ].filter(item => item);
 }

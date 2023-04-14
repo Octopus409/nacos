@@ -137,6 +137,7 @@
     <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
     <maven.test.skip>false</maven.test.skip>
     <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+    <jdbc.postgresql.version>42.5.1</jdbc.postgresql.version>
     <sonar-maven-plugin.version>3.0.2</sonar-maven-plugin.version>
     <dependency-mediator-maven-plugin.version>1.0.2</dependency-mediator-maven-plugin.version>
     <clirr-maven-plugin.version>2.7</clirr-maven-plugin.version>
@@ -508,6 +509,11 @@
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
         <version>${SnakeYaml.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${jdbc.postgresql.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

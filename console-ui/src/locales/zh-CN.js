@@ -16,11 +16,11 @@
 
 const I18N_CONF = {
   Header: {
-    home: '首页',
-    docs: '文档',
-    blog: '博客',
-    community: '社区',
-    enterprise: 'Nacos企业版',
+    // home: '首页',
+    // docs: '文档',
+    // blog: '博客',
+    // community: '社区',
+    // enterprise: 'Nacos企业版',
     languageSwitchButton: 'En',
     logout: '登出',
     changePassword: '修改密码',
@@ -92,7 +92,7 @@ const I18N_CONF = {
     namespaceDelete: '删除',
     details: '详情',
     edit: '编辑',
-    namespacePublic: 'public(保留空间)',
+    namespacePublic: 'yilian(保留空间)',
     pubNoData: '没有数据',
     namespaceAdd: '新建命名空间',
     namespaceNames: '命名空间名称',

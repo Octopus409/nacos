@@ -15,7 +15,7 @@
  */
 
 import $ from 'jquery';
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SuccessDialog from '../../../components/SuccessDialog';
 import { getParams, setParams, request } from '../../../globalLib';
@@ -85,6 +85,7 @@ class NewConfig extends React.Component {
     this.codeValue = '';
     this.mode = 'text';
     this.ips = '';
+    this.inputValue = '';
   }
 
   componentDidMount() {
@@ -434,32 +435,37 @@ class NewConfig extends React.Component {
     //     label: 'XML'
     // }];
     const list = [
-      {
-        value: 'text',
-        label: 'TEXT',
-      },
+      // {
+      //   value: 'text',
+      //   label: 'TEXT',
+      // },
       {
         value: 'json',
         label: 'JSON',
       },
-      {
-        value: 'xml',
-        label: 'XML',
-      },
+      // {
+      //   value: 'xml',
+      //   label: 'XML',
+      // },
       {
         value: 'yaml',
         label: 'YAML',
       },
-      {
-        value: 'html',
-        label: 'HTML',
-      },
+      // {
+      //   value: 'html',
+      //   label: 'HTML',
+      // },
       {
         value: 'properties',
         label: 'Properties',
       },
+      {
+        value: 'env',
+        label: 'env',
+      },
     ];
     const { editorClass } = this.state;
+    // const [inputValue, setInputValue] = useState('');
 
     return (
       <Loading
@@ -563,6 +569,13 @@ class NewConfig extends React.Component {
             <RadioGroup
               dataSource={list}
               value={this.state.configType}
+              onChange={this.newChangeConfig.bind(this)}
+            />
+            <Input
+              // value={this.state.confi}
+              htmlType="text"
+              style={{ width: 100, marginLeft: 20 }}
+              placeholder={'自定义'}
               onChange={this.newChangeConfig.bind(this)}
             />
           </FormItem>

@@ -184,7 +184,11 @@ public class ConfigController {
         if (StringUtils.isBlank(srcUser)) {
             configForm.setSrcUser(RequestUtil.getSrcUserName(request));
         }
-        if (!ConfigType.isValidType(type)) {
+/*        if (!ConfigType.isValidType(type)) {
+            configForm.setType(ConfigType.getDefaultType().getType());
+        }*/
+        // 允许自定义type
+        if (StringUtils.isEmpty(type)) {
             configForm.setType(ConfigType.getDefaultType().getType());
         }
     

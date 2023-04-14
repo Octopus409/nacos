@@ -46,12 +46,15 @@ public class NamespaceOperationService {
     
     private final CommonPersistService commonPersistService;
     
-    private static final String DEFAULT_NAMESPACE = "public";
-    
-    private static final String DEFAULT_NAMESPACE_SHOW_NAME = "Public";
-    
-    private static final String DEFAULT_NAMESPACE_DESCRIPTION = "Public Namespace";
-    
+//    private static final String DEFAULT_NAMESPACE = "public";
+    private static final String DEFAULT_NAMESPACE = "yilian";
+
+//    private static final String DEFAULT_NAMESPACE_SHOW_NAME = "Public";
+    private static final String DEFAULT_NAMESPACE_SHOW_NAME = "yilian";
+
+//    private static final String DEFAULT_NAMESPACE_DESCRIPTION = "Public Namespace";
+    private static final String DEFAULT_NAMESPACE_DESCRIPTION = "yilian Namespace";
+
     private static final int DEFAULT_QUOTA = 200;
     
     private static final String DEFAULT_CREATE_SOURCE = "nacos";

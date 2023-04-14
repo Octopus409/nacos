@@ -43,12 +43,10 @@ import {
 const { Row, Col } = Grid;
 
 const LANGUAGE_LIST = [
-  { value: 'text', label: 'TEXT' },
   { value: 'json', label: 'JSON' },
-  { value: 'xml', label: 'XML' },
   { value: 'yaml', label: 'YAML' },
-  { value: 'html', label: 'HTML' },
   { value: 'properties', label: 'Properties' },
+  { value: 'env', label: 'env' }
 ];
 
 const TAB_LIST = ['production', 'beta'];
@@ -543,28 +541,6 @@ class ConfigEditor extends React.Component {
                 onChange={desc => this.changeForm({ desc })}
               />
             </Form.Item>
-            {!isNewConfig && tabActiveKey !== 'production' && (
-              <Form.Item label={locale.betaPublish}>
-                {!betaPublishSuccess && (
-                  <Checkbox checked={isBeta} onChange={isBeta => this.setState({ isBeta })}>
-                    {locale.betaSwitchPrompt}
-                  </Checkbox>
-                )}
-                {isBeta && (
-                  <Select
-                    size="medium"
-                    hasArrow
-                    autoWidth
-                    mode="tag"
-                    filterLocal
-                    dataSource={subscriberDataSource}
-                    onChange={betaIps => this.setState({ betaIps: betaIps.join(',') })}
-                    hasClear
-                    value={betaIps ? betaIps.split(',') : []}
-                  />
-                )}
-              </Form.Item>
-            )}
             <Form.Item label={locale.format}>
               <Radio.Group
                 defaultValue="text"
@@ -580,6 +556,18 @@ class ConfigEditor extends React.Component {
                   </Radio>
                 ))}
               </Radio.Group>
+
+              <Input
+                // value={this.state.confi}
+                value={form.type != 'env' && form.type != 'json' && form.type != 'yaml' && form.type != 'properties' ? form.type : ''}
+                htmlType="text"
+                style={{ width: 100, marginLeft: 20 }}
+                placeholder={'自定义'}
+                onChange={type => {
+                  this.initMoacoEditor(type, form.content);
+                  this.changeForm({ type });
+                }}
+              />
             </Form.Item>
             <Form.Item
               label={

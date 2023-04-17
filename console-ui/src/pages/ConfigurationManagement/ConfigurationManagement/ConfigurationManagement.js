@@ -408,7 +408,6 @@ class ConfigurationManagement extends React.Component {
         >
           <Menu onItemClick={this.chooseNav.bind(this, record)}>
             <Menu.Item key={'nav1'}>{locale.version}</Menu.Item>
-            <Menu.Item key={'nav3'}>{locale.listenerQuery}</Menu.Item>
           </Menu>
         </Dropdown>
       </div>

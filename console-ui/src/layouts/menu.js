@@ -75,10 +75,10 @@ export default function(model) {
     //   ],
     // },
     globalAdmin ? authorityControlMenu : undefined,
-    {
-      key: 'namespace',
-      url: '/namespace',
-    },
+    // {
+    //   key: 'namespace',
+    //   url: '/namespace',
+    // },
     // {
     //   key: 'clusterManagementVirtual',
     //   children: [

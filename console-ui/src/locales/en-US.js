@@ -16,11 +16,11 @@
 
 const I18N_CONF = {
   Header: {
-    home: 'HOME',
-    docs: 'DOCS',
-    blog: 'BLOG',
-    community: 'COMMUNITY',
-    enterprise: 'ENTERPRISE EDITION',
+    // home: 'HOME',
+    // docs: 'DOCS',
+    // blog: 'BLOG',
+    // community: 'COMMUNITY',
+    // enterprise: 'ENTERPRISE EDITION',
     languageSwitchButton: '中',
     logout: 'logout',
     changePassword: 'modify password',

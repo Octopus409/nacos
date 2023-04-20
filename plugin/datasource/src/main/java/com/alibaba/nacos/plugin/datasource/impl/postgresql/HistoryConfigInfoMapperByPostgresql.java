@@ -16,6 +16,7 @@
 
 package com.alibaba.nacos.plugin.datasource.impl.postgresql;
 
+import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
@@ -39,9 +40,20 @@ public class HistoryConfigInfoMapperByPostgresql  extends AbstractMapper impleme
     }
 
     @Override
-    public String findConfigHistoryFetchRows() {
-        return  "SELECT nid,data_id,group_id,tenant_id,app_name,src_ip,src_user,op_type,gmt_create,gmt_modified FROM his_config_info "
-                + "WHERE data_id = ? AND group_id = ? AND tenant_id = ? ORDER BY nid DESC";
+    public String findConfigHistoryFetchRows(String dataId, String groupId, String tenantId) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT nid,data_id,group_id,tenant_id,app_name,src_ip,src_user,op_type,gmt_create,gmt_modified FROM his_config_info where 1=1 ");
+        if(!StringUtils.isEmpty(dataId)){
+            sb.append(" AND data_id = ? ");
+        }
+        if(!StringUtils.isEmpty(groupId)) {
+            sb.append(" AND group_id = ? ");
+        }
+        if(!StringUtils.isEmpty(tenantId)) {
+            sb.append(" AND tenant_id = ? ");
+        }
+        sb.append(" ORDER BY nid DESC ");
+        return sb.toString();
     }
 
     @Override

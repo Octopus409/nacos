@@ -59,7 +59,7 @@ public interface HistoryConfigInfoMapper extends Mapper {
      *
      * @return The sql of listing configuration history change record.
      */
-    String findConfigHistoryFetchRows();
+    String findConfigHistoryFetchRows(String dataId, String groupId, String tenantId);
     
     /**
      * Get previous config detail.

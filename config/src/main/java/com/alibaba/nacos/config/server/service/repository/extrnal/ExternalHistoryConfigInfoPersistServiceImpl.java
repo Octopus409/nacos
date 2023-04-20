@@ -149,12 +149,29 @@ public class ExternalHistoryConfigInfoPersistServiceImpl implements HistoryConfi
         String tenantTmp = StringUtils.isBlank(tenant) ? StringUtils.EMPTY : tenant;
         HistoryConfigInfoMapper historyConfigInfoMapper = mapperManager.findMapper(
                 dataSourceService.getDataSourceType(), TableConstant.HIS_CONFIG_INFO);
-        String sqlCountRows = historyConfigInfoMapper.count(Arrays.asList("data_id", "group_id", "tenant_id"));
-        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows();
+
+        List<String> countParamList = new ArrayList<>();
+        List<Object> fetchPageParamList = new ArrayList<>();
+
+        if(!StringUtils.isEmpty(dataId)){
+            countParamList.add("data_id");
+            fetchPageParamList.add(dataId);
+        }
+        if(!StringUtils.isEmpty(group)){
+            countParamList.add("group_id");
+            fetchPageParamList.add(group);
+        }
+        if(!StringUtils.isEmpty(tenantTmp)){
+            countParamList.add("tenant_id");
+            fetchPageParamList.add(tenantTmp);
+        }
+
+        String sqlCountRows = historyConfigInfoMapper.count(countParamList);
+        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows(dataId, group, tenant);
         
         Page<ConfigHistoryInfo> page = null;
         try {
-            page = helper.fetchPage(sqlCountRows, sqlFetchRows, new Object[] {dataId, group, tenantTmp}, pageNo,
+            page = helper.fetchPage(sqlCountRows, sqlFetchRows, fetchPageParamList.toArray(), pageNo,
                     pageSize, HISTORY_LIST_ROW_MAPPER);
         } catch (DataAccessException e) {
             LogUtil.FATAL_LOG.error("[list-config-history] error, dataId:{}, group:{}", new Object[] {dataId, group},

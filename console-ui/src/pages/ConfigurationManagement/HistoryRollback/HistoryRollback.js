@@ -109,7 +109,7 @@ class HistoryRollback extends React.Component {
   getData(pageNo = 1) {
     const self = this;
     this.serverId = getParams('serverId') || '';
-    if (!this.state.dataId) return false;
+    // if (!this.state.dataId) return false;
     request({
       beforeSend() {
         self.openLoading();
@@ -164,14 +164,6 @@ class HistoryRollback extends React.Component {
 
   selectAll() {
     const { locale = {} } = this.props;
-    if (!this.state.dataId) {
-      Message.error(locale.dataIdCanNotBeEmpty);
-      return false;
-    }
-    if (!this.state.group) {
-      Message.error(locale.groupCanNotBeEmpty);
-      return false;
-    }
     if (this.state.dataId !== this.preDataId) {
       this.preDataId = this.state.dataId;
     }
@@ -333,7 +325,7 @@ class HistoryRollback extends React.Component {
           />
           <div>
             <Form inline field={this.field}>
-              <Form.Item label="Data ID" required>
+              <Form.Item label="Data ID">
                 <Select
                   style={{ width: 200 }}
                   size="medium"
@@ -359,7 +351,7 @@ class HistoryRollback extends React.Component {
                   }}
                 />
               </Form.Item>
-              <Form.Item label="Group:" required>
+              <Form.Item label="Group:">
                 <Select
                   style={{ width: 200 }}
                   size="medium"

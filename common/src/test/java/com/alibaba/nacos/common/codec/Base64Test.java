@@ -79,4 +79,14 @@ public class Base64Test {
         Assert.assertEquals("aa~aa?", s3);
         Assert.assertEquals("aa~aa?", s4);
     }
+
+    @Test
+    public void testBase64(){
+
+        String origin = "";
+
+        byte[] encodeBase64 = Base64.encodeBase64(origin.getBytes(StandardCharsets.UTF_8));
+        System.out.println(new String(encodeBase64));
+
+    }
 }

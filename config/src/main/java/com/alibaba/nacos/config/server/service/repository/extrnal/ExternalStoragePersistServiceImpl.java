@@ -1989,7 +1989,7 @@ public class ExternalStoragePersistServiceImpl implements PersistService {
         HistoryConfigInfoMapper historyConfigInfoMapper = mapperManager.findMapper(
                 dataSourceService.getDataSourceType(), TableConstant.HIS_CONFIG_INFO);
         String sqlCountRows = historyConfigInfoMapper.count(Arrays.asList("data_id", "group_id", "tenant_id"));
-        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows();
+        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows(dataId, group, tenant);
         
         Page<ConfigHistoryInfo> page = null;
         try {

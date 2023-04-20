@@ -1841,7 +1841,7 @@ public class EmbeddedStoragePersistServiceImpl implements PersistService {
         HistoryConfigInfoMapper historyConfigInfoMapper = mapperManager.findMapper(dataSourceService.getDataSourceType(),
                 TableConstant.HIS_CONFIG_INFO);
         String sqlCountRows = historyConfigInfoMapper.count(Arrays.asList("data_id", "group_id", "tenant_id"));
-        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows();
+        String sqlFetchRows = historyConfigInfoMapper.findConfigHistoryFetchRows(dataId, group, tenant);
         
         PaginationHelper<ConfigHistoryInfo> helper = createPaginationHelper();
         return helper.fetchPage(sqlCountRows, sqlFetchRows, new Object[] {dataId, group, tenantTmp}, pageNo, pageSize,

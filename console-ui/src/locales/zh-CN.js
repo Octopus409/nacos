@@ -40,6 +40,7 @@ const I18N_CONF = {
     nacosName: 'NACOS',
     doesNotExist: '您访问的页面不存在',
     configurationManagementVirtual: '配置管理',
+    configRelation: '配置关系',
     configurationManagement: '配置列表',
     configdetail: '配置详情',
     configsync: '同步配置',

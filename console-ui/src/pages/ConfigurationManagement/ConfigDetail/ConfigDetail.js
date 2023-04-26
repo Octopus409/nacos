@@ -324,6 +324,9 @@ class ConfigDetail extends React.Component {
             <FormItem label={'Group'} required>
               <Input htmlType={'text'} readOnly {...init('group')} />
             </FormItem>
+            <FormItem label={'Group'} required>
+              <Input htmlType={'text'} readOnly {...init('group')} />
+            </FormItem>
             <FormItem label=" ">
               <div>
                 <a style={{ fontSize: '12px' }} onClick={this.toggleMore.bind(this)}>
@@ -364,7 +367,7 @@ class ConfigDetail extends React.Component {
                 </div>
               </FormItem>
             )}
-            <FormItem label={'MD5:'} required>
+            <FormItem label={'MD5'} required>
               <Input htmlType={'text'} readOnly {...init('md5')} />
             </FormItem>
             <FormItem label={locale.configuration} required>

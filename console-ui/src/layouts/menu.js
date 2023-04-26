@@ -24,6 +24,10 @@ const configurationMenu = {
       url: '/configurationManagement',
     },
     {
+      key: 'configRelation',
+      url: '/configRelation',
+    },
+    {
       key: 'historyRollback',
       url: '/historyRollback',
     }

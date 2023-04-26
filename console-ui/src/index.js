@@ -50,6 +50,7 @@ import UserManagement from './pages/AuthorityControl/UserManagement';
 import PermissionsManagement from './pages/AuthorityControl/PermissionsManagement';
 import RolesManagement from './pages/AuthorityControl/RolesManagement';
 import Welcome from './pages/Welcome/Welcome';
+import ConfigRelation from './pages/ConfigurationManagement/ConfigRelation';
 
 import reducers from './reducers';
 import { changeLanguage } from './reducers/locale';
@@ -95,6 +96,7 @@ const MENU = [
   { path: '/userManagement', component: UserManagement },
   { path: '/rolesManagement', component: RolesManagement },
   { path: '/permissionsManagement', component: PermissionsManagement },
+  { path: '/configRelation', component: ConfigRelation },
 ];
 
 @connect(state => ({ ...state.locale }), { changeLanguage })

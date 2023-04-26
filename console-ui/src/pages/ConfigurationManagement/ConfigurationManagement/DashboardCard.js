@@ -45,7 +45,8 @@ class DashboardCard extends React.Component {
                       {locale.importantReminder0}
                     </div>
                     <strong style={{ color: '#777a7e' }}>
-                      <span>{item.title}</span>
+                      {/* <span>{item.title}</span> */}
+                      <span>{'Title'}</span>
                     </strong>
                     <strong>
                       <span>

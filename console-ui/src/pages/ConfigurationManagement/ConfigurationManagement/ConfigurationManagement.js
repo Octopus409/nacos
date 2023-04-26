@@ -1113,6 +1113,7 @@ class ConfigurationManagement extends React.Component {
             style={{ position: 'relative' }}
           >
             <div style={{ display: this.inApp ? 'none' : 'block' }}>
+              <h1>aasdf</h1>
               <PageTitle
                 title={locale.configurationManagement8}
                 desc={this.state.nownamespace_id}

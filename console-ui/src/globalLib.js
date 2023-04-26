@@ -17,6 +17,7 @@
 import projectConfig from './config';
 import $ from 'jquery';
 import { Message } from '@alifd/next';
+import 'globalthis/auto';
 
 function goLogin() {
   const url = window.location.href;
